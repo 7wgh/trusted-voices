@@ -1,0 +1,13 @@
+{
+  "name": "trusted-voices-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Trusted Voices LinkedIn connection filtering tool",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "serve src",
+    "build": "echo 'Build process to be implemented'"
+  },
+  "dependencies": {
+    "serve": "^14.2.1"
+  }
+}
