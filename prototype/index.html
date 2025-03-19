@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trusted Voices - LinkedIn Connection Filter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Trusted Voices</h1>
+            <p class="subtitle">LinkedIn Connection Filter</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="input-group">
+                    <label for="linkedin-urls">LinkedIn Profile URLs</label>
+                    <textarea 
+                        id="linkedin-urls" 
+                        placeholder="Paste LinkedIn profile URLs here (one per line)"
+                        rows="4"
+                    ></textarea>
+                    <small>Format: https://www.linkedin.com/in/profilename/</small>
+                </div>
+
+                <div class="input-group">
+                    <label for="job-titles">Job Titles to Match</label>
+                    <input 
+                        type="text" 
+                        id="job-titles" 
+                        placeholder="Enter job titles (comma-separated)"
+                    >
+                    <small>Example: Software Engineer, Product Manager, Marketing Director</small>
+                </div>
+
+                <div class="input-group">
+                    <label>Company Size Range</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="company-size" value="1-10">
+                            <span>1-10 employees</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="company-size" value="11-50">
+                            <span>11-50 employees</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="company-size" value="51-200">
+                            <span>51-200 employees</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="company-size" value="201-500">
+                            <span>201-500 employees</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="company-size" value="501-1000">
+                            <span>501-1000 employees</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="company-size" value="1001-5000">
+                            <span>1001-5000 employees</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="company-size" value="5001-10000">
+                            <span>5001-10000 employees</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="company-size" value="10001+">
+                            <span>10001+ employees</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="process-btn" class="primary-btn">Process Connections</button>
+                    <button id="cancel-btn" class="secondary-btn" disabled>Cancel Processing</button>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <div class="results-header">
+                    <h2>Results</h2>
+                    <div class="summary">
+                        <span id="processed-count">0</span> profiles processed
+                        <span id="matches-count">0</span> matches found
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table id="results-table">
+                        <thead>
+                            <tr>
+                                <th>Client Name</th>
+                                <th>Connection Name</th>
+                                <th>Job Title</th>
+                                <th>Company</th>
+                                <th>Company Size</th>
+                                <th>Connection Strength</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Results will be populated here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="export-section">
+                    <button id="export-btn" class="secondary-btn" disabled>Export to CSV</button>
+                </div>
+            </section>
+        </main>
+
+        <div id="error-message" class="error-message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
